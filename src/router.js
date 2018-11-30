@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 
 var childProcess = require('child_process');
 var githubUsername = 'alsack'
@@ -17,7 +18,12 @@ router.post('/', (req, res) => {
     var branch = req.body.ref;
 
     if(branch.indexOf('master') > -1 && sender.login === githubUsername){
-        deploy(repo, res);
+        if(fs.existsSync(path.resolve(__dirname, '../../' + repo))) {
+            deploy(repo);
+            res.send(200);
+        } else {
+            res.send(500);
+        }
     }
 });
 
