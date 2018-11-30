@@ -13,14 +13,15 @@ router.use(bodyParser.json());
 
 //handle posts from the github webhooks
 router.post('/', (req, res) => {
-    var repo = req.body.repository.name;
+    let repo = req.body.repository.name;
     var sender = req.body.sender;
     var branch = req.body.ref;
 
     if(branch.indexOf('master') > -1 && sender.login === githubUsername){
         if(fs.existsSync(path.resolve(__dirname, '../../' + repo))) {
-            deploy(repo);
-            res.send(200);
+            res.send(200).then(() => {
+                deploy(repo);
+            });
         } else {
             res.send(500);
         }
