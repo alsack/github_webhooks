@@ -20,7 +20,8 @@ router.post('/', (req, res) => {
     if(branch.indexOf('master') > -1 && sender.login === githubUsername){
         if(fs.existsSync(path.resolve(__dirname, '../../' + repo))) {
             res.send(200).then(() => {
-                deploy(repo);
+                //wait 10 seconds, then pull, restart the server.
+                setTimeout(()=> { deploy(repo); }, 10000);
             });
         } else {
             res.send(500);
