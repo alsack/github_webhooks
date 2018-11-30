@@ -26,6 +26,7 @@ router.post('/', (req, res) => {
             res.send(500);
         }
     }
+    res.send(200);
 });
 
 function deploy(repo, res){
