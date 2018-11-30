@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 
 function deploy(repo, res){
     var scriptDir = path.resolve(__dirname, '..');
-    childProcess.exec('cd ' + scriptDir + ' && ./rebuild_deploy_script.sh ' + repo + ' > deploy.log', function(err, stdout, stderr){
+    childProcess.exec('cd ' + scriptDir + ' && ./rebuild_deploy_script.sh ' + repo + ' > deploy.log 2>&1', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
