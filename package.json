@@ -1,0 +1,23 @@
+{
+  "name": "github_webhooks",
+  "version": "1.0.0",
+  "description": "nodejs project to respond to github webhooks for automatic code deployment",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsack/github_webhooks.git"
+  },
+  "author": "Andrew Sack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alsack/github_webhooks/issues"
+  },
+  "homepage": "https://github.com/alsack/github_webhooks#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
