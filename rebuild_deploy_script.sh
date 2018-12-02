@@ -4,7 +4,7 @@ echo "Pulling from master for project " $1
 git checkout master
 git pull
 echo "Pulled successfully from master.  Rebuilding"
-npm install
+npm ci
 npm run build
 echo "Build complete. Restarting server..."
 cd ../node_web_server
