@@ -29,14 +29,13 @@ router.post('/', (req, res) => {
     res.send(202);
 });
 
-function deploy(repo, res){
+function deploy(repo){
     var scriptDir = path.resolve(__dirname, '..');
+    console.log('github webooks updating ' + repo + ' from ' + scriptDir);
     childProcess.exec('cd ' + scriptDir + ' && ./rebuild_deploy_script.sh ' + repo + ' > deploy.log 2>&1', function(err, stdout, stderr){
         if (err) {
          console.error(err);
-         return res.send(500);
         }
-        res.send(200);
       });
 }
 
