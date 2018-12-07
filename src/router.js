@@ -21,12 +21,12 @@ router.post('/', (req, res) => {
         if(fs.existsSync(path.resolve(__dirname, '../../' + repo))) {
             //wait 10 seconds, then pull, restart the server.
             setTimeout(() => { deploy(repo); }, 10000);
-            res.send(200);
+            res.send(201);
         } else {
             res.send(500);
         }
     }
-    res.send(200);
+    res.send(202);
 });
 
 function deploy(repo, res){
