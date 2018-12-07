@@ -17,6 +17,9 @@ router.post('/', (req, res) => {
     var sender = req.body.sender;
     var branch = req.body.ref;
 
+    console.log('received request to update ' + repo + ' on branch ' +
+            branch + ' from ' + sender);
+
     if(branch.indexOf('master') > -1 && sender.login === githubUsername){
         if(fs.existsSync(path.resolve(__dirname, '../../' + repo))) {
             //wait 10 seconds, then pull, restart the server.
