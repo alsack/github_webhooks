@@ -7,6 +7,5 @@ echo "Pulled successfully from master.  Rebuilding"
 npm ci
 npm run build
 echo "Build complete. Restarting server..."
-cd ../node_web_server
 npm run restart
-echo "Server restarted Successfully"
+echo "Server restarted"

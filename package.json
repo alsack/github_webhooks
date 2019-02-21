@@ -18,6 +18,7 @@
   "homepage": "https://github.com/alsack/github_webhooks#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node_web_server": "git+https://github.com/alsack/node_web_server.git"
   }
 }
