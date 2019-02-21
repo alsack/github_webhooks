@@ -4,6 +4,9 @@
   "description": "nodejs project to respond to github webhooks for automatic code deployment",
   "main": "src/index.js",
   "scripts": {
+    "start": "pm2 start ./src/server/index.js --name \"github_webhooks\"",
+    "stop": "pm2 delete \"github_webhooks\"",
+    "restart": "pm2 restart \"github_webhooks\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
