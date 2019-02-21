@@ -1,4 +1,4 @@
-const router = require('router.js');
+const router = require('./router');
 
 // launch server
 const nodeWebServer = require('node_web_server/src/index.js');
